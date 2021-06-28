@@ -2,6 +2,7 @@
 , dependencies =
   [ "aff"
   , "ansi"
+  , "argparse-basic"
   , "arrays"
   , "console"
   , "control"
@@ -27,5 +28,5 @@
   , "tuples"
   ]
 , packages = ../packages.dhall
-, sources = [ "src/**/*.purs", "test/*.purs" ]
+, sources = [ "src/**/*.purs", "bin/Bin/FormatOptions.purs", "test/*.purs" ]
 }
