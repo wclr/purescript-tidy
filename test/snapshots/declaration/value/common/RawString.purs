@@ -4,6 +4,9 @@ short = """this is a short string"""
 
 long = """this is a very long string that lasts for many many words and just continues to go on until the end of all time and civilization has collapsed and there is nothing left but this long, long string."""
 
+example = foo """1
+2""" a b
+
 multiline = """
 Let me not to the marriage of true minds
 Admit impediments. Love is not love
