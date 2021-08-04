@@ -22,3 +22,37 @@ data ManyArgs a b c d e f =
      d
     e
       f
+
+-- what is this
+data Foo (abcdefg ::
+-- oh
+  Type) (b :: (foo :: Type
+  , bar :: Type
+  Type Type
+  (
+    Type Type
+    Type Type) | FooBar))
+
+data Wat' (a :: forall
+ ---ok
+ x. a ->
+b -> c)
+
+data Oh (a :: a
++
+  -- what
+b +
+c)
+
+data Foo2 =
+ -- ok
+ Bar
+ | Baz | Quux
+
+data OK =
+ -- huh
+  OK {a :: Int,
+ b :: String, c :: forall x
+          --ok
+          . x
+          -> x} String | Wat

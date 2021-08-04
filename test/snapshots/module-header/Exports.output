@@ -1,5 +1,6 @@
 module Exports
-  ( module A
+  ( --wat
+    module A
   , class B
   , type (||)
   , C
@@ -8,4 +9,13 @@ module Exports
   , E(..)
   , (||)
   , fun
+
+  -- What is this
+  , Ok(Ok, OK, OK)
+  , -- o
+    Other
+      ( This {- ok -}
+      , {- oh -} That
+      )
+  , And(..)
   ) where

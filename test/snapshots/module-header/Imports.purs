@@ -27,3 +27,9 @@ import Data.Map (singleton
 import Data.List as List
 import Data.Maybe
              as Maybe
+
+import Data.OK
+  hiding
+  (   {- oh -} whatever, ok, huh)
+import Nice (    Foo , class Argh)
+ as Bar

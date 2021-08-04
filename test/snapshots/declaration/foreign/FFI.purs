@@ -1,6 +1,8 @@
 -- @format --arrow-first
 module FFI where
 
+foreign import kind OK
+
 foreign import data Undefined :: Type -> Type
 
 foreign import data
