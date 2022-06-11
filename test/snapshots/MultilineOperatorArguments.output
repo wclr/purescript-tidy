@@ -33,9 +33,9 @@ test = foo
           a
       )
   >>> map
-    ( \a ->
-        a
-    )
+      ( \a ->
+          a
+      )
 
 test = foo
   # case _ of
@@ -53,9 +53,9 @@ test = foo
 test =
   foo
     >>> case _ of
-      Foo -> 42
+        Foo -> 42
     >>> case _ of
-      Foo -> 42
+        Foo -> 42
     # case _ of
         Foo -> 42
 
