@@ -682,7 +682,9 @@ formatSignature conf (Labeled { label, separator, value }) =
     TypeArrowLast ->
       label `space` indent do
         flexGroup $ anchor (formatToken conf separator)
-          `spaceBreak` anchor (flexGroup (formatType conf value))
+        -- not to transfer forall on next line spaceBreak -> space
+        -- and remove anchor to allow have forall on the next line
+          `space` (flexGroup (formatType conf value))
 
 formatMonotype :: forall e a. Format (Type e) e a
 formatMonotype conf = Hang.toFormatDoc <<< formatHangingMonotype conf
@@ -797,8 +799,8 @@ formatHangingPolytype ind conf { init, last } = case conf.typeArrowPlacement of
             `space` anchor (alignCurrentColumn doc)
 
   TypeArrowLast ->
-    hangBreak $ joinWithMap spaceBreak formatPolyArrowLast init
-      `spaceBreak` flexGroup (formatMonotype conf last)
+    hangBreak $ joinWithMap space formatPolyArrowLast init
+      `space` flexGroup (formatMonotype conf last)
     where
     formatPolyArrowLast = case _ of
       PolyForall kw vars dot ->
