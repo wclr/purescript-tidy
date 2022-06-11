@@ -136,7 +136,8 @@ toFormatDoc = fst <<< goInit
   goInitOp ind (HangingOp width op doc) next = do
     let
       Tuple op' doc' = realignOp op doc
-      algn = if width <= 1 then align 2 else identity
+      algn = if width <= 1 then align 2 else align 2 --identity
+      -- algn = if width <= 1 then align 2 else identity
       docOprd = fst (goInitOperand algn ind doc')
       docGroup = flexSelectJoin (op' <> docOprd) (fst next) (snd next)
       docBreak = docJoin op' <> docOprd <> snd next
@@ -144,7 +145,8 @@ toFormatDoc = fst <<< goInit
 
   goLastOp ind (HangingOp width op doc) = do
     let
-      algn = if width <= 1 then align 2 else identity
+      algn = if width <= 1 then align 2 else align 2 --identity
+      -- algn = if width <= 1 then align 2 else identity
       next = goLastOperand algn ind doc
       docIndent = snd next
       docGroup = flexSelectJoin op (fst next) docIndent
@@ -308,7 +310,8 @@ toFormatDoc = fst <<< goInit
           forceMinSourceBreaks 1 fdoc
         else
           FormatDoc doc
-            { doc = Dodo.spaceBreak <> comm.doc <> breakDoc comm.right doc.doc
+          -- for handing apps spaceBreak -> space
+            { doc = Dodo.space <> comm.doc <> breakDoc comm.right doc.doc
             , leading = mempty
             }
 
