@@ -1,0 +1,8 @@
+{
+  // "purescript.buildCommand": "spago -x bin/spago.dhall build --purs-args --json-errors",
+  // "purescript.buildOpenedFiles": true,  
+  // "purescript.fullBuildOnSave": true,
+  // "purescript.diagnosticsOnType": true  
+  "purescript.addNpmPath": true,
+  "purescript.useRebuild2": true
+}

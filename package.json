@@ -17,7 +17,7 @@
     "version": "echo 'export const version = \"v'$npm_package_version'\";' > ./bin/Bin/Version.js && git add ./bin/Bin/Version.js",
     "postversion": "git push && git push --tags",
     "build": "spago -x bin/spago.dhall build",
-    "build:corefn": "spago -x bin/spago.dhall build -u '-g corefn,js'",
+    "build:corefn": "spago -x bin/spago.dhall build -u \"-g corefn,js\"",
     "bundle": "npm run build:corefn && purs-backend-es build && npm run bundle:main && npm run bundle:worker",
     "bundle:main": "purs-backend-es bundle-module --platform node --to \"./bundle/Main/index.js\" --no-build",
     "bundle:worker": "purs-backend-es bundle-app --platform node --to \"./bundle/Bin.Worker/index.js\" --main Bin.Worker --no-build",
@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/natefaubion/purescript-tidy#readme",
   "devDependencies": {
-    "purs-backend-es": "^1.4.2"
+    "purs-backend-es": "^1.4.2",
+    "spago": "^0.21.0"
   }
 }
